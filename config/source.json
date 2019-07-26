@@ -1,0 +1,15 @@
+{
+  "name": "RestSourceConnectorSpring",
+  "config": {
+    "producer.compression.type": "snappy",
+    "connector.class": "com.tm.kafka.connect.rest.RestSourceConnector",
+    "tasks.max": "1",
+    "rest.source.poll.interval.ms": "5000",
+    "rest.source.method": "GET",
+    "rest.source.url": "http://localhost:8080/transactions",
+    "rest.source.headers": "Content-Type:application/json,Accept:application/json",
+    "rest.source.topic.selector": "com.tm.kafka.connect.rest.selector.SimpleTopicSelector",
+    "rest.source.destination.topics": "test",
+    "rest.source.properties": ""
+  }
+}
